@@ -6,19 +6,19 @@ RSpec.describe User, type: :model do
       expect(User.create(name: 'Amin')).to be_valid
     end
 
-    it 'not valid without name' do
+    it 'invalid without name' do
       expect(User.create(name: nil)).to_not be_valid
     end
 
-    it 'not valid with string' do
+    it 'invalid with string' do
       expect(User.create(name: 'Amin', posts_counter: 'five')).to_not be_valid
     end
 
-    it 'not valid with floating point number' do
+    it 'invalid with floating point number' do
       expect(User.create(name: 'Amin', posts_counter: 1.5)).to_not be_valid
     end
 
-    it 'not valid with negative number' do
+    it 'invalid with negative number' do
       expect(User.create(name: 'Amin', posts_counter: -1)).to_not be_valid
     end
 
