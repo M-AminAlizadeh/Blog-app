@@ -1,20 +1,24 @@
-<div id="user_container">
-  <%= render partial: "users/user_info", locals: { user: @user } %>
+<div class="user-container">
+  <div>
+    <%= render partial: "users/user_info", locals: { user: @user } %>
+  </div>
+  
+  <div class="user-bio">
+    <h3>Bio</h3>
+    <p><%= @user.bio %></p>
+  </div>
+  
+  <div class="posts-container">
+    <% @user.display_three_recent_posts.each_with_index do |post, i| %>
+      <li>
+        <%= link_to "/users/#{@user.id}/posts/#{post.id}" do %>
+          <%= render partial: "posts/post_info", locals: { post: post } %>
+        <% end %>
+      </li>
+    <% end %>
+  </div>
+  
+  <button>
+    <%= link_to "See all posts", "/users/#{@user.id}/posts?page=1" %>
+  </button>
 </div>
-
-<div id="user_bio">
-  <h3>Bio</h3>
-  <p><%= @user.bio %></p>
-</div>
-
-<div id="post_container">
-  <% @user.display_three_recent_posts.each_with_index do |post, i| %>
-    <li>
-      <%= link_to "/users/#{@user.id}/posts/#{post.id}", id: "post" do %>
-        <%= render partial: "posts/post_info", locals: { post: post } %>
-      <% end %>
-    </li>
-  <% end %>
-</div>
-
-<%= link_to "See all posts", "/users/#{@user.id}/posts?page=1" %>
