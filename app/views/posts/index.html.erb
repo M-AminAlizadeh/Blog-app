@@ -1,11 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>posts</title>
-  </head>
-  <body>
-    <h1>list of posts by a selected user</h1>
-  </body>
-</html>
+<div class="posts">
+  <div>
+     <%= render partial: "users/user_info", locals: { user: @user } %>
+  </div>
+  
+  <ul class='posts-container'>
+    <% @posts.each_with_index do |post, i| %>
+      <li>
+        <%= link_to "/users/#{@user.id}/posts/#{post.id}", class:"post" do %>
+          <%= render partial: "posts/post_info", locals: { post: post } %>
+        <% end %>
+        <ul class="comment-container">
+          <% post.display_five_recent_comments.each do |comment| %>
+            <li class="comment">
+              <p><%= comment.user.name %>: <%= comment.text %></p>
+            </li>
+          <% end %>
+        </ul>
+      </li>
+    <% end %>
+  </ul>
+  
+  <%= will_paginate %>
+</div>
