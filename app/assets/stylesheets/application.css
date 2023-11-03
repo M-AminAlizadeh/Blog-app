@@ -5,6 +5,8 @@
   font-family: sans-serif;
 }
 
+.users-container,
+.post-container-in-post-page,
 .user-container {
   height: 100vh;
   display: flex;
