@@ -15,7 +15,7 @@
           <%= render partial: "posts/post_info", locals: { post: post } %>
         <% end %>
         <ul class="comment-container">
-          <% post.display_five_recent_comments.each do |comment| %>
+          <% post.display_five_recent_comments.includes([:user]).each do |comment| %>
             <li class="comment">
               <p><%= comment.user.name %>: <%= comment.text %></p>
             </li>

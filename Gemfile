@@ -24,11 +24,11 @@ end
 
 group :development do
   gem 'web-console'
+  gem 'bullet'
 end
 
 group :test do
   gem 'capybara'
   gem 'selenium-webdriver'
-  gem 'webdrivers'
   gem 'database_cleaner'
 end
