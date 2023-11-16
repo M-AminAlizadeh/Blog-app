@@ -2,8 +2,11 @@ require 'rails_helper'
 
 RSpec.describe 'Posts', type: :request do
   context 'GET /index' do
+    let(:user) { User.create(name: 'Tom') }
+
     before :each do
-      get '/users/:user_id/posts'
+      Post.create(author: user, title: 'Title')
+      get user_posts_path(user)
     end
 
     it 'tests successful response' do
@@ -19,7 +22,11 @@ RSpec.describe 'Posts', type: :request do
     end
 
     it 'displays the right content' do
-      expect(response.body).to include('<h1>list of posts by a selected user</h1>')
+      expect(response.body).to include('<h2>Tom</h2>')
+      expect(response.body).to include('<p>Number of posts: 1</p>')
+      expect(response.body).to include('<h3>Title</h3>')
+      expect(response.body).to include('<p></p>')
+      expect(response.body).to include(`<p class="counter">\nComments: 0, Likes: 0\n</p>`)
     end
   end
 
@@ -45,7 +52,9 @@ RSpec.describe 'Posts', type: :request do
     end
 
     it 'displays the right content' do
-      expect(response.body).to include('<h1>selected post of a given user</h1>')
+      expect(response.body).to include('<h3>Title by Tom</h3>')
+      expect(response.body).to include('<p></p>')
+      expect(response.body).to include(`<p class="counter">\nComments: 0, Likes: 0\n</p>`)
     end
   end
 end
