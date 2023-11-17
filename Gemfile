@@ -14,8 +14,8 @@ gem 'stimulus-rails'
 gem 'turbo-rails'
 gem 'tzinfo-data', platforms: %i[windows jruby]
 gem 'devise'
-gem 'mailcatcher'
-gem 'sass-rails'
+# gem 'mailcatcher'
+# gem 'sass-rails'
 
 group :development, :test do
   gem 'debug', platforms: %i[mri windows]
