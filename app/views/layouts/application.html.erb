@@ -11,6 +11,12 @@
   </head>
 
   <body>
+    <header>
+      <% if current_user %>
+        <%= link_to "Sing out", destroy_user_session_path, 
+        'data-turbo-method': :delete %>
+      <% end %>
+    </header>
     <h5 class='notice-message'>
       <%= notice %>
     </h5>
