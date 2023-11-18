@@ -86,3 +86,20 @@
   list-style-type: none;
   margin: 1rem 0;
 }
+
+.label {
+  color: rgb(0, 47, 255);
+  font-size: 1.2rem;
+}
+
+.input-field {
+  padding: 0.2rem;
+  font-size: 1rem;
+}
+
+.btn {
+  padding: 0.5rem;
+  font-size: 1.2rem;
+  background-color: green;
+  color: white;
+}
