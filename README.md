@@ -138,6 +138,12 @@ For more info checkout `.github` folder
 - Twitter: [@Mamin_alizadeh](https://twitter.com/Mamin_alizadeh)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/m-amin-alizadeh/)
 
+👤 **Ricardo Egas**
+
+- GitHub: [@githubhandle](https://github.com/RicardoEgas)
+- Twitter: [@twitterhandle](https://twitter.com/RjEgas)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/ricardo-egas-952125136)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
